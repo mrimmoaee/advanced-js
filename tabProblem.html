@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tabbed Content</title>
+    <style>
+        /* Styling for the tab buttons */
+        .tab {
+            text-align: center;
+            float: left;
+            padding: 10px;
+            margin: 5px;
+            width: 100px;
+            background: blue;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Change button color on hover */
+        .tab:hover {
+            background: lightblue;
+        }
+
+        /* Active tab styling */
+        .tab.active {
+            background: darkblue;
+        }
+
+        /* Styling for the content sections */
+        .content {
+            width: 600px;
+            margin-left: 5px;
+            margin-top: 50px;
+            height: 150px;
+            padding: 20px;
+            border: 2px solid blue;
+            display: none; /* Hide all content sections by default */
+        }
+
+        /* Show the first content section by default */
+        #contentT1 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tab buttons -->
+    <div class="tab active" onclick="showTab(1)">Tab 1</div>
+    <div class="tab" onclick="showTab(2)">Tab 2</div>
+    <div class="tab" onclick="showTab(3)">Tab 3</div>
+
+    <!-- Content sections -->
+    <div id="contentT1" class="content">Content for the first tab goes here.</div>
+    <div id="contentT2" class="content">Content for the second tab goes here.</div>
+    <div id="contentT3" class="content">Content for the third tab goes here.</div>
+
+    <script>
+        // JavaScript function to show the selected tab content
+        function showTab(tabNo) {
+            // Hide all content sections
+            document.getElementById("contentT1").style.display = "none";
+            document.getElementById("contentT2").style.display = "none";
+            document.getElementById("contentT3").style.display = "none";
+
+            // Remove the 'active' class from all tab buttons
+            document.querySelector(".tab.active").classList.remove("active");
+
+            // Show the selected content section
+            document.getElementById("contentT" + tabNo).style.display = "block";
+
+            // Add the 'active' class to the clicked tab button
+            document.querySelector(".tab:nth-child(" + tabNo + ")").classList.add("active");
+        }
+    </script>
+
+</body>
+</html>

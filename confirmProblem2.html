@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm Example</title>
+    <script>
+      function userConfirm() {
+        let message = "";
+        // Display a confirm box and store the user's response
+        let response = confirm("Are you sure?");
+
+        // Check the user's response
+        if (response === true) {
+          message = "Details are being processed";
+        } else {
+          message = "Processing cancelled";
+        }
+
+        // Display the message in the paragraph with id "output"
+        document.getElementById("output").innerHTML = message;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Confirm Example</h1>
+    <p>Content here could include a form the user fills in.</p>
+    <!-- Button to trigger the confirm box -->
+    <button onclick="userConfirm()">Process details</button>
+    <!-- Paragraph to display the message -->
+    <p id="output"></p>
+  </body>
+</html>
