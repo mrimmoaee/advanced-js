@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Confirmation Example</title>
+    <script>
+      function deleteItem() {
+        // Display a confirm box to ask the user if they want to delete the item
+        let response = confirm("Are you sure you want to delete this item?");
+
+        // Check the user's response
+        if (response === true) {
+          // Simulate deleting the item (e.g., send a request to a server)
+          document.getElementById("status").innerHTML =
+            "Item deleted successfully!";
+        } else {
+          // If the user cancels, display a message
+          document.getElementById("status").innerHTML = "Deletion cancelled.";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Delete Item Example</h1>
+    <p>Click the button below to delete an item.</p>
+    <!-- Button to trigger the delete confirmation -->
+    <button onclick="deleteItem()">Delete Item</button>
+    <!-- Paragraph to display the status of the deletion -->
+    <p id="status"></p>
+  </body>
+</html>
