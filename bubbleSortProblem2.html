@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bubble Sort - Strings</title>
+    <script>
+      function sortStrings() {
+        // Array of strings to be sorted
+        let fruits = ["banana", "apple", "cherry", "date", "blueberry"];
+
+        // Display original array
+        alert("Original Fruits: " + fruits);
+
+        // Add Bubble Sort Algorithm
+        for (let i = 0; i < numbers.length; i++) {
+          for (let j = 0; j < numbers.length - 1; j++) {
+            // Swap if the current element is greater than the next
+            if (numbers[j] > numbers[j + 1]) {
+              let temp = numbers[j];
+              numbers[j] = numbers[j + 1];
+              numbers[j + 1] = temp;
+            }
+          }
+        }
+
+        // Display sorted array
+        alert("Sorted Fruits: " + fruits);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Bubble Sort - Strings</h1>
+    <button onclick="sortStrings()">Sort Fruits</button>
+  </body>
+</html>

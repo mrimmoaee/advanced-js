@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Bubble Sort</title>
+    <script>
+      function bubbleSort() {
+        // Array to be sorted
+        let arr = [4, 3, 7, 9, 2, 6];
+
+        // Display original array
+        alert("Original Array: " + arr);
+
+        // Add Bubble Sort Algorithm here
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr.length - 1; j++) {
+            // Swap if the current element is greater than the next
+            if (arr[j] > arr[j + 1]) {
+              let temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+
+        // Display sorted array
+        alert("Sorted Array: " + arr);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Simple Bubble Sort Example</h1>
+    <button onclick="bubbleSort()">Sort</button>
+  </body>
+</html>

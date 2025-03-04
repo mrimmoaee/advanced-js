@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Filter Example</title>
+    <script>
+      const ages = [17, 23, 45, 21, 56, 19, 27, 19];
+
+      function filterAge() {
+        // Get the minimum age from the input box
+        let ageFilter = document.getElementById("ageIn").value;
+
+        // Filter the array to include only ages greater than the input value
+        let newAge = ages.filter(function (arrayElement) {
+          return arrayElement > ageFilter;
+        });
+
+        // Display the filtered array in an alert box
+        alert(newAge);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Filtering a List</h2>
+    <p>Enter your details to receive our monthly newsletter</p>
+    <form onsubmit="filterAge()">
+      <label>Enter minimum age:</label><br />
+      <input type="text" id="ageIn" /><br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
