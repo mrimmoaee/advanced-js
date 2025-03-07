@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Square Root Calculator</title>
+    <script>
+      function calculateSquareRoot() {
+        // Prompt the user to enter a number
+        let input = prompt("Enter a number to calculate its square root:");
+
+        try {
+          // Check if the input is not a number
+          if (isNaN(input)) {
+            throw "Invalid input: Not a number"; // Throw an error if the input is not a number
+          }
+
+          // Convert the input to a number
+          let number = parseFloat(input);
+
+          // Check if the number is negative
+          if (number < 0) {
+            throw "Invalid input: Cannot calculate square root of a negative number"; // Throw an error for negative input
+          }
+
+          // Calculate the square root
+          let result = Math.sqrt(number);
+
+          // Display the result
+          document.getElementById("output").innerHTML =
+            "Square root of " + number + " is: " + result;
+        } catch (err) {
+          // Display the error message if an error occurs
+          document.getElementById("output").innerHTML = "Error: " + err;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Square Root Calculator</h1>
+    <button onclick="calculateSquareRoot()">Calculate Square Root</button>
+    <p id="output"></p>
+  </body>
+</html>

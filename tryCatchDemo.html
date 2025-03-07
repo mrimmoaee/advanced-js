@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Handling Example</title>
+    <script>
+        function myFunction() {
+            // Prompt the user to enter a number
+            let numb = prompt("Enter a number:");
+
+            try {
+                // Check if the input is not a number using isNaN()
+                if (isNaN(numb)) {
+                    throw "Not a number"; // Throw an error if the input is not a number
+                }
+
+                // Check if the number is negative
+                if (numb < 0) {
+                    throw "Number should be greater than 0"; // Throw an error if the number is negative
+                }
+
+                // Perform the division
+                let acc = 7 / numb;
+
+                // Display the result
+                document.getElementById("pOut").innerHTML = "Result: " + acc;
+            } catch (err) {
+                // Display the error message if an error occurs
+                document.getElementById("pOut").innerHTML = "Error: " + err;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Error Handling</h1>
+    <button onclick="myFunction()">Click here</button>
+    <p id="pOut"></p>
+</body>
+</html>
